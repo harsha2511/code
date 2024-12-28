@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62
+                    <br>using namespace std;
+                    <br>bool isValidParenthesis(string str){
+                    <br>stack&#60char&#6>s;
+                    <br>for(int i=0;i &#60 str.size();i++){
+                    <br>char ch=str[i];
+                    <br>if(ch=='(' || ch=='{' || ch=='[')
+                    <br> s.push(ch);
+                    <br>else{ // closing bracket
+                    <br>if(!s.empty()){
+                    <br>char top=s.top();
+                    <br>if((ch==')' && top=='(')||(ch=='}' && top=='{')||(ch==']' && top=='['))
+                    <br>s.pop();
+                    <br>else
+                    <br>return false;
+                    <br>}
+                    <br>else{//stack is empty
+                    <br>return false;
+                    <br>}
+                    <br>}
+                    <br>}
+                    <br>if(s.empty())
+                    <br>return true;
+                    <br>else
+                    <br>return false;
+                    <br>}
+                    <br>int main() {
+                    <br>string str1="{()}";
+                    <br>string str2="({(})";
+                    <br>cout&#60&#60isValidParenthesis(str1)&#60&#60endl;
+                    <br>cout&#60&#60isValidParenthesis(str2)&#60&#60endl;
+                    <br>return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

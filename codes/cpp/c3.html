@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    using namespace std;
+class complex{x
+int real, img;
+public:
+complex(int Real, int Img){
+    this->real=Real;
+    this->img=Img;
+    }
+    void display(){
+    cout << "complex number is: " << real << "+" << img << "i" << endl;
+    }
+    void operator +(complex &c2){
+        int resreal = this->real+c2.real;
+        int resimg = this->img+c2.img;
+        complex c3(resreal,resimg);
+        cout << "The sum of complex numbers is: " << endl;
+        c3.display();
+        }
+        };
+        int main(){
+            complex c1(2,3), c2(4,5);
+            c1.display();
+            c2.display();
+            c1+c2;
+            return 0;
+        }
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+                    

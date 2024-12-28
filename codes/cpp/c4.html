@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    using namespace std;
+                    <br>class Node {
+                    <br>public:
+                    <br>int value;
+                    <br>Node* next;
+                    <br> Node* prev;
+                    <br> Node(int value) {
+                    <br>this->value = value;
+                    <br>this->next = nullptr;
+                    <br>this->prev = nullptr;
+                    <br>}
+                    <br>};
+                    <br>class DoublyLinkedList {
+                    <br>private:
+                    <br>Node* head;
+                    <br>Node* tail;
+                    <br>int length;
+                    <br>public:
+                    <br>DoublyLinkedList(int value) {
+                    <br>Node* newNode = new Node(value);
+                    <br>head = newNode;
+                    <br>tail = newNode;
+                    <br>length = 1;
+                    <br>}
+                    <br>~DoublyLinkedList() {
+                    <br>Node* temp = head;
+                    <br>while (head) {
+                    <br>head = head->next;
+                    <br>delete temp;
+                    <br>temp = head;
+                    <br>}
+                    <br>}
+                    <br>void printList() {
+                    <br>Node* temp = head;
+                    <br>while (temp != nullptr) {
+                    <br>cout &#60&#60 temp->value &#60&#60 endl;
+                    <br>temp=temp->next;
+                    <br>}
+                    <br>}
+                    <br>void getHead() {
+                    <br>if (head == nullptr) {
+                    <br>cout &#60&#60 "Head: nullptr" &#60&#60 endl;
+                    <br> }
+                    <br>else {
+                    <br>cout &#60&#60"Head: " &#60&#60 head->value &#60&#60 endl;
+                    <br>}
+                    <br>}
+                    <br>void getTail() {
+                    <br>if (tail==nullptr) {
+                    <br>cout &#60&#60 "Tail: nullptr" &#60&#60 endl;
+                    <br>}
+                    <br>else {
+                    <br>cout&#60&#60 "Tail: " &#60&#60 tail->value &#60&#60 endl;
+                    <br>}
+                    <br>}
+                    <br>void getLength() {
+                    <br>cout &#60&#60 "Length: " &#60&#60length &#60&#60 endl;
+                    <br>}
+                    <br>void append(int value) {
+                    <br>Node* newNode=new Node(value);
+                    <br>if(length==0) {
+                    <br>head=newNode;
+                    <br>tail=newNode;
+                    <br>}
+                    <br>else {
+                    <br>tail->next = newNode;
+                    <br>newNode->prev = tail;
+                    <br>tail = newNode;
+                    <br>}
+                    <br>length++;
+                    <br>}
+                    <br>void deleteLast() {
+                    <br>if (length == 0) return;
+                    <br> Node* temp = tail;
+                    <br>if (length == 1) {
+                    <br>head = nullptr;
+                    <br>tail = nullptr;
+                    <br>} else {
+                    <br>tail = tail->prev;
+                    <br> tail->next = nullptr;
+                    <br> }
+                    <br> delete temp;
+                    <br> length--;
+                    <br> }
+
+                    <br> void prepend(int value) {
+                    <br>Node* newNode = new Node(value);
+                    <br> if (length == 0) {
+                    <br>head = newNode;
+                    <br>tail = newNode;
+                    <br>} else {
+                    <br>newNode->next = head;
+                    <br>head->prev = newNode;
+                    <br>head = newNode;
+                    <br>}
+                    <br>length++;
+                    <br>}
+                    <br>void deleteFirst() {
+                    <br>if (length == 0) return;
+                    <br>Node* temp = head;
+                    <br>if (length == 1) {
+                    <br>head = nullptr;
+                    <br>tail = nullptr;
+                    <br>}
+                    <br>else {
+                    <br>head = head->next;
+                    <br>head->prev = nullptr;
+                    <br>}
+                    <br>delete temp;
+                    <br>length--;
+                    <br>}
+                    <br>Node* get(int index) {
+                    <br>if (index &#60 0 || index>= length)
+                    <br>return nullptr;
+                    <br>Node* temp = head;
+                    <br>if (index &#60 length/2) {
+                    <br>for (int i=0; i &#60 index; ++i) {
+                    <br>temp=temp->next;
+                    <br> }
+                    <br>}
+                    <br>else {
+                    <br>temp = tail;
+                    <br>for (int i = length - 1; i > index; --i) {
+                    <br>temp = temp->prev;
+                    <br>}
+                    <br>}
+                    <br>return temp;
+                    <br>}
+                    <br>bool set(int index, int value) {
+                    <br>Node* temp = get(index);
+                    <br>if (temp) {
+                    <br>temp->value = value;
+                    <br>return true;
+                    <br>}
+                    <br>return false;
+                    <br>}
+                    <br>bool insert(int index, int value) {
+                    <br>if (index &#60 0 || index> length)
+                    <br>return false;
+                    <br>if (index == 0) {
+                    <br>prepend(value);
+                    <br>return true;
+                    <br>}
+                    <br>if (index == length) {
+                    <br>append(value);
+                    <br>return true;
+                    <br>}
+                    <br>Node* newNode = new Node(value);
+                    <br>Node* before = get(index - 1);
+                    <br>Node* after = before->next;
+                    <br>newNode->prev = before;
+                    <br>newNode->next = after;
+                    <br>before->next = newNode;
+                    <br>after->prev = newNode;
+                    <br>length++;
+                    <br>return true;
+                    <br>}
+                    <br>void deleteNode(int index) {
+                    <br>if (index &#60 0 || index>= length)
+                    <br>return;
+                    <br>if (index == 0) return deleteFirst();
+                    <br>if (index == length - 1) return deleteLast();
+                    <br>Node* temp = get(index);
+                    <br>temp->next->prev = temp->prev;
+                    <br>temp->prev->next = temp->next;
+                    <br>delete temp;
+                    <br>length--;
+                    <br>}
+                    <br>};
+                    <br>int main() {
+                    <br>DoublyLinkedList* myDLL = new DoublyLinkedList(1);
+                    <br>myDLL->append(2);
+                    <br>myDLL->append(3);
+                    <br>myDLL->append(4);
+                    <br>myDLL->append(5);cout &#60&#60"DLL before deleteNode():\n" ;
+                    <br>myDLL->printList();
+                    <br>myDLL->deleteNode(2);
+                    <br>cout &#60&#60 "\nDLL after deleteNode() in middle:\n" ;
+                    <br>myDLL->printList();
+                    <br>myDLL->deleteNode(0);
+                    <br>cout &#60&#60 "\nDLL after deleteNode() of first node:\n" ;
+                    <br>myDLL->printList();myDLL->deleteNode(2);
+                    <br>cout &#60&#60 "\nDLL after deleteNode() of last node:\n" ;
+                    <br>myDLL->printList();
+                    <br>return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
