@@ -19,30 +19,30 @@
                     <br>class complex{
                     <br>&#160&#160int real, img;
                     <br>public:
-                    <br>complex(int Real, int Img){
-                    <br>this->real=Real;
-                    <br>this->img=Img;
-                    <br>}
-                    <br>void display(){
-                    <br>cout &#60&#60 "complex number is: " &#60&#60 real &#60&#60 "+" &#60&#60 img &#60&#60 "i"
+                    <br>&#160&#160complex(int Real, int Img){
+                    <br>&#160&#160&#160&#160this->real=Real;
+                    <br>&#160&#160&#160&#160this->img=Img;
+                    <br>&#160&#160}
+                    <br>&#160&#160void display(){
+                    <br>&#160&#160&#160&#160cout &#60&#60 "complex number is: " &#60&#60 real &#60&#60 "+" &#60&#60 img &#60&#60 "i"
                     &#60&#60 endl;
-                    <br>}
-                    <br>complex operator +(complex &c2){
-                    <br>int resreal = this->real+c2.real;
-                    <br>int resimg = this->img+c2.img;
-                    <br>complex c3(resreal,resimg);
-                    <br>cout &#60&#60 "The sum of complex numbers is: " &#60&#60 endl;
-                    <br>return c3;
-                    <br>}
+                    <br>&#160&#160}
+                    <br>&#160&#160complex operator +(complex &c2){
+                    <br>&#160&#160&#160&#160int resreal = this->real+c2.real;
+                    <br>&#160&#160&#160&#160int resimg = this->img+c2.img;
+                    <br>&#160&#160&#160&#160complex c3(resreal,resimg);
+                    <br>&#160&#160&#160&#160cout &#60&#60 "The sum of complex numbers is: " &#60&#60 endl;
+                    <br>&#160&#160&#160&#160return c3;
+                    <br>&#160&#160}
                     <br>};
                     <br>int main(){
-                    <br>complex c1(2,3), c2(4,5);
-                    <br>c1.display();
-                    <br>c2.display();
-                    <br>complex c3= c1 + c2;
-                    <br>cout &#60&#60 "Sum of complex numbers is: " &#60&#60 endl;
-                    <br>c3.display();
-                    <br>return 0;
+                    <br>&#160&#160complex c1(2,3), c2(4,5);
+                    <br>&#160&#160c1.display();
+                    <br>&#160&#160c2.display();
+                    <br>&#160&#160complex c3= c1 + c2;
+                    <br>&#160&#160cout &#60&#60 "Sum of complex numbers is: " &#60&#60 endl;
+                    <br>&#160&#160c3.display();
+                    <br>&#160&#160return 0;
                     <br>}
                 </p>
             </div>
