@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    class ElectricityBill:
+                    <br>&#160&#160def __init__(self, units_consumed):
+                    <br>&#160&#160&#160&#160self.units_consumed = units_consumed
+                    <br>&#160&#160def calculate_bill(self):
+                    <br>&#160&#160&#160&#160total_charge = self.base_charge + (self.units_consumed * self.rate_per_unit
+                    <br>&#160&#160&#160&#160return total_charge
+                    <br>&#160&#160def generate_bill(self):
+                    <br>&#160&#160&#160&#160print("Electricity Bill:")
+                    <br>&#160&#160&#160&#160print("Units consumed:", self.units_consumed)
+                    <br>&#160&#160&#160&#160print("Base Charge:", self.base_charge, "INR")
+                    <br>&#160&#160&#160&#160print("Charge per unit:", self.rate_per_unit, "INR")
+                    <br>&#160&#160&#160&#160print("Total Bill:", self.calculate_bill(), "INR")
+                    <br>class RuralElectricityBill(ElectricityBill):
+                    <br>&#160&#160def __init__(self, units_consumed):
+                    <br>&#160&#160&#160&#160super().__init__(units_consumed)
+                    <br>&#160&#160&#160&#160self.base_charge = 30 # Base charge for rural areas in INR
+                    <br>&#160&#160&#160&#160self.rate_per_unit = 5 # Rate per unit for rural areas in INR
+                    <br>class UrbanElectricityBill(ElectricityBill):
+                    <br>&#160&#160def __init__(self, units_consumed):
+                    <br>&#160&#160&#160&#160super().__init__(units_consumed)
+                    <br>&#160&#160&#160&#160self.base_charge = 50 # Base charge for urban areas in INR
+                    <br>&#160&#160&#160&#160self.rate_per_unit = 5 # Rate per unit for urban areas in INR
+                    <br>
+                    <br># Example usage
+                    <br>rural_units_consumed = float(input("Number of Units (KWH) for Rural: "))
+                    <br>urban_units_consumed = float(input("Number of Units (KWH) for Urban: "))
+                    <br>rural_electricity_bill = RuralElectricityBill(rural_units_consumed)
+                    <br>urban_electricity_bill = UrbanElectricityBill(urban_units_consumed)
+                    <br>
+                    <br>print("\nRural Electricity Bill:")
+                    <br>rural_electricity_bill.generate_bill()
+                    <br>
+                    <br>print("\nUrban Electricity Bill:")
+                    <br>urban_electricity_bill.generate_bill()
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

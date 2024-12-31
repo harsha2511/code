@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #using Equation
+                    <br>a=input("Enter 'D' for delta or 'S' for star")
+                    <br>if(a=="S"):
+                    <br>&#160&#160r1= int(input("enter the value of r1:"))
+                    <br>&#160&#160r2= int(input("enter the value of r2:"))
+                    <br>&#160&#160r3= int(input("enter the value of r3:"))
+                    <br>&#160&#160ra=r2+r3+((r2*r3)/r1)
+                    <br>&#160&#160rb=r1+r3+((r1*r3)/r2)
+                    <br>&#160&#160rc=r2+r1+((r2*r1)/r3)
+                    <br>&#160&#160print("Ra:{:1.2f}\n Rb:{:1.2f}\n Rc/:{:1.2f}".format(ra,rb,rc))
+                    <br>
+                    <br>elif (a=="D"):
+                    <br>&#160&#160ra= int(input("enter the value of ra:"))
+                    <br>&#160&#160rb= int(input("enter the value of rb:"))
+                    <br>&#160&#160rc= int(input("enter the value of rc:"))
+                    <br>&#160&#160r1=((rb*rc)/(ra+rb+rc))
+                    <br>&#160&#160r2=((ra*rc)/(ra+rb+rc))
+                    <br>&#160&#160r3=((rb*ra)/(ra+rb+rc))
+                    <br>&#160&#160print("DELTA TO STAR \n R1:{:1.2f}\n R2:{:1.2f}\n R3/:{:1.2f}".format(r1,r2,r3))
+                    <br>
+                    <br>else:
+                    <br>&#160&#160print("Wrong input")
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #using lcapy
+                    <br>from lcpay import circuit
+                    <br>ckt=circuit("""
+                    <br>I 1 0 20;down,color:black
+                    <br>R1 1_1 0_1 7;down size=1,color=brown
+                    <br>R2 1_2 0_2 9;down size=1,color=red
+                    <br>R3 1_3 0_311;down size=1,color=orange
+                    <br>R4 1_4 0_4 13;down size=1,color=gray
+                    <br>W 1 1_1;right
+                    <br>W 1_1 1_2;right
+                    <br>W 1_2 1_3;right
+                    <br>W 1_3 1_4;right
+                    <br>W 0 0_1;right
+                    <br>W 0_1 0_2;right
+                    <br>W 0_2 0_3;right
+                    <br>W 0_3 0_4;right
+                    <br>;draw""")
+                    <br>ckt.draw()
+                    <br>print(ckt.R1.V)
+                    <br>print(ckt.R2.V)
+                    <br>print(ckt.R3.V)
+                    <br>print(ckt.R4.V)
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

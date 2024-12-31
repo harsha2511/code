@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    ;Program to find largest of numbers
+                    <br>MOV R3,#04H ; Counter initialization
+                    <br>MOV R0,#40H ; Starting address
+                    <br>MOV A,@R0
+                    <br>INC R0
+                    <br>L1: MOV B,@R0
+                    <br>&#160&#160CJNE A,B,L2 ; Comparing two numbers
+                    <br>L2: JNC L3 ; Checking for condition ‘greater than’
+                    <br>&#160&#160MOV A,@R0
+                    <br>L3: INC R0
+                    <br>&#160&#160DJNZ R3,L1
+                    <br>&#160&#160MOV 50H,A
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

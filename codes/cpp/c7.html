@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    #include &#60stack.h&#62<br>
+                    using namespace std;<br>
+                    string reverseString(string str){
+                    <br>&#160&#160stack&#60char&#62s;
+                    <br>&#160&#160string rstr;
+                    <br>&#160&#160for(int i=0;i&#60 str.size();i++){
+                    <br>&#160&#160&#160&#160s.push(str[i]);
+                    <br>&#160&#160}
+                    <br>&#160&#160while(!s.empty()){
+                    <br>&#160&#160&#160&#160char temp=s.top();
+                    <br>&#160&#160&#160&#160rstr=rstr+temp;
+                    <br>&#160&#160&#160&#160s.pop();
+                    <br>&#160&#160}
+                    <br>&#160&#160return rstr;
+                    <br>}
+                    <br>int main() {
+                    <br>&#160&#160string str="hello World";
+                    <br>&#160&#160cout&#60&#60 " Original String:-" &#60&#60str&#60&#60endl;
+                    <br>&#160&#160cout&#60&#60 " Reverse String:- " &#60&#60reverseString(str)&#60&#60endl;
+                    <br>&#160&#160return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

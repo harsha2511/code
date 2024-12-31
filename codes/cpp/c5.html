@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62
+                    <br>using namespace std;
+                    <br>class Node{
+                    <br>public:
+                    <br>int value;
+                    <br> Node* next;
+                    <br>Node(int value){
+                    <br>this->value=value;
+                    <br>this->next=NULL;
+                    <br>}
+                    <br>};
+
+                    <br>class LinkedList{
+                    <br>private:
+                    <br>Node* head;
+                    <br>Node* tail;
+                    <br>int length;
+                    <br>public:
+                    <br>LinkedList(int value){
+                    <br>Node* newnode= new Node(value);
+                    <br>head=newnode;
+                    <br>tail=newnode;
+                    <br>length=1;
+                    <br>}
+                    <br>~LinkedList(){
+                    <br>Node* temp=head;
+                    <br>while(head!=nullptr){
+                    <br>head=head->next;
+                    <br>delete temp;
+                    <br>temp=head;
+                    <br>}
+                    <br>}
+                    <br>void printlist(){
+                    <br>Node* temp=head;
+                    <br>while(temp!=NULL){
+                    <br>cout&#60&#60temp->value&#60&#60" ";
+                    <br>temp=temp->next;
+                    <br>}
+                    <br>cout&#60&#60endl;
+                    <br>}
+                    <br>void getHead(){
+                    <br>if(head==nullptr) cout&#60&#60"Head: nullptr"&#60&#60endl;
+                    <br>else cout&#60&#60 " Head: " &#60&#60head->value&#60&#60endl;
+                    <br>}
+                    <br>void getTail(){
+                    <br>if(tail==nullptr)
+                    <br>cout&#60&#60"Tail: nullptr"&#60&#60endl;
+                    <br>else
+                    <br>cout&#60&#60"Tail: "&#60&#60tail->value&#60&#60endl;
+                    <br>}
+                    <br>void getLength(){
+                    <br>cout&#60&#60"Length: "&#60&#60length&#60&#60endl;
+                    <br>}
+                    <br>void Append(int value){
+                    <br>Node* newnode= new Node(value);
+                    <br>if(head==nullptr){
+                    <br>head=newnode;
+                    <br>tail=newnode;
+                    <br>}
+                    <br>else{
+                    <br>tail->next=newnode;
+                    <br>tail=newnode;
+                    <br>}
+                    <br>length++;
+                    <br>}
+                    <br>void Prepend(int value){
+                    <br>Node* newnode= new Node(value);
+                    <br>if(head==nullptr){
+                    <br>head=newnode;
+                    <br>tail=newnode;
+                    <br>}
+                    <br>else{
+                    <br>newnode->next=head;
+                    <br>head=newnode;
+                    <br>}
+                    <br>length++;
+                    <br>}
+                    <br>Node* get(int index){
+                    <br>if(index &#60 0 || index>=length) return nullptr;
+                    <br> Node* temp=head;
+                    <br>for(int i=0;i &#60 index;i++){
+                    <br>temp=temp->next;
+                    <br> }
+                    <br>return temp;
+                    <br>}
+                    <br>bool set(int index,int value){
+                    <br>Node* temp=get(index);
+                    <br>if(temp!=nullptr){
+                    <br>temp->value=value;
+                    <br>return true;
+                    <br>}
+                    <br>return false;
+                    <br>}
+                    <br>};
+                    <br>int main() {
+                    <br>LinkedList* myLL= new LinkedList(7);
+                    <br>myLL->Append(9);
+                    <br>myLL->Append(4);
+                    <br>myLL->getHead();
+                    <br>myLL->getTail();
+                    <br>myLL->getLength();
+                    <br>cout&#60&#60"Linked List before prepend: ";
+                    <br>myLL->printlist();
+                    <br>myLL->Prepend(2);
+                    <br>cout&#60&#60"Linked List after prepend: ";
+                    <br>myLL->printlist();
+                    <br>myLL->set(2,6);
+                    <br>cout&#60&#60"Linked List after set: ";
+                    <br>myLL->printlist();
+                    <br>return 0;<br>
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

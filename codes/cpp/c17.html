@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62
+                    <br>using namespace std;
+                    <br>class Student{
+                    <br>public:
+                    <br>&#160&#160Student(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Base class: Constructor"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br> &#160&#160~Student(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Base class: Destructor"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>};
+                    <br>class EEE:public Student{
+                    <br>public:
+                    <br>&#160&#160EEE(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Derived class: Constructor"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>&#160&#160~EEE(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Derived class: Destructor"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>};
+                    <br>int main() {
+                    <br>&#160&#160Student *ptr=new EEE;
+                    <br>&#160&#160delete ptr;
+                    <br>&#160&#160return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

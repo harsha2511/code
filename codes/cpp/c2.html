@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62
+                    <br>using namespace std;
+                    <br>class CircularQueue{
+                    <br>private:
+                    <br>int front;
+                    <br>int rear;
+                    <br>int arr[5];
+                    <br>int itemCount=0;
+                    <br>public:
+                    <br>CircularQueue(){
+                    <br> front=-1;
+                    <br>rear=-1;
+                    <br>for(int i=0;i &#60 5;i++)
+                    <br> arr[i]=0;
+                    <br>}
+                    <br>bool isempty(){
+                    <br>if(front==-1 && rear==-1) return true;
+                    <br>else return false;
+                    <br>}
+                    <br>bool isFull(){
+                    <br>if((rear+1)%5==front) return true;
+                    <br>else return false;
+                    <br>}
+                    <br> void enqueue(int value) {
+                    <br>if (isFull()) {
+                    <br> cout &#60&#60 "Queue is Full" &#60&#60 endl;
+                    <br> return;
+                    <br>} else if (isempty()) {
+                    <br> front = 0;
+                    <br> rear = 0;
+                    <br> } else {
+                    <br> rear = (rear + 1) % 5;
+                    <br> }
+                    <br> arr[rear] = value;
+                    <br> itemCount++;
+                    <br> }
+                    <br> int dequeue(){
+                    <br> int temp;
+                    <br>if(isempty()){
+                    <br> cout&#60&#60"Queue is empty"&#60&#60 endl;
+                    <br> return 0;
+                    <br>}
+                    <br>else if(front==rear){
+                    <br>temp=arr[front];
+                    <br> arr[front]=0;
+                    <br> front=rear=-1;
+                    <br> itemCount--;
+                    <br> return temp;
+                    <br>} else{
+                    <br> temp=arr[front];
+                    <br> arr[front]=0;
+                    <br> front=(front+1)%5;
+                    <br>itemCount--;
+                    <br>return temp;
+                    <br>}
+                    <br>}
+                    <br>int count(){
+                    <br>return itemCount;
+                    <br> }
+                    <br> void display(){
+                    <br>cout&#60&#60"All values in the Queue are: "&#60&#60endl;
+                    <br>for(int i=0;i&#60 5;i++) cou&#60&#60arr[i]&#60&#60" ";
+                    <br>}
+                    <br>};
+                    <br>int main(){
+                    <br>CircularQueue q;
+                    <br>int option, value;
+                    <br>do {
+                    <br>cout&#60&#60"What operation would you like to perform?"&#60&#60endl;
+                    <br>cout&#60&#60"1.Enqueue()"&#60&#60endl;
+                    <br>cout&#60&#60"2.Dequeue()"&#60&#60endl;
+                    <br>cout&#60&#60"3.isEmpty()"&#60&#60endl;
+                    <br>cout&#60&#60"4.isFull()"&#60&#60endl;
+                    <br> cout&#60&#60"5.count()"&#60&#60endl;
+                    <br>cout&#60&#60"6.display()"&#60&#60endl;
+                    <br>cout&#60&#60"7.clear screen"&#60&#60endl;
+                    <br>cout&#60&#60"Enter your choice (enter 0 for exit)"&#60&#60endl;
+                    <br> cin>>option;
+                    <br>switch (option) {
+                    <br>case 0:cout&#60&#60"Exit"&#60&#60endl;
+                    <br>break;
+                    <br> case 1:cout&#60&#60"Enqueue Operations"&#60&#60endl;;
+                    <br>cout&#60&#60"Enter the value:";
+                    <br>cin>>value;
+                    <br>q.enqueue(value);
+                    <br>break;
+                    <br>case 2:cout&#60&#60"Dequeued operation\nDequeued value: " &#60&#60 q.dequeue() &#60&#60 endl;
+                    <br>break;
+                    <br>case 3:
+                    <br>if (q.isempty()) cout&#60&#60"Queue is empty."&#60&#60endl;
+                    <br>else cout&#60&#60"Queue is not empty."&#60&#60endl;
+                    <br>break;
+
+                    <br>case 4:
+                    <br>if(q.isFull()) cout&#60&#60"Queue is full"&#60&#60endl;
+                    <br>else cout&#60&#60"Queue is not full"&#60&#60endl;
+                    <br> break;
+
+                    <br> case 5:
+                    <br>cout&#60&#60"Count Operations\nNumber of elements in the queue: "&#60&#60q.count()&#60&#60endl;
+                    <br>break;
+
+                    <br>case 6:
+                    <br>cout&#60&#60"Queue items: ";
+                    <br>q.display();
+                    <br>break;
+
+                    <br>default:
+                    <br>cout&#60&#60"Invalid option! Please try again."&#60&#60endl;
+                    <br>}
+                    <br>} while (option!=0);
+                    <br> return 0;
+                    <br>}
+
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

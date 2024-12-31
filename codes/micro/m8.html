@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#reg51.h&#62
+                    <br>sbit Port3_Pin1 = P3^1;
+                    <br>void main(void) {
+                    <br>&#160&#160//Sine Look-up table
+                    <br>&#160&#160unsigned char code i[ ]={124, 145, 166, 186, 203, 218, 231, 240, 246, 248,246, 240,
+                    231, 218, 203, 186, 166, 145, 124, 102, 81, 62, 44, 29, 16, 7, 1, 0,
+                    1, 7, 16, 29, 44, 62, 81, 102};
+                    <br>&#160&#160unsigned char n;
+                    <br>&#160&#160//Port configuration
+                    <br>&#160&#160P2= 0;
+                    <br>&#160&#160//Sine wave generation on Port-2
+                    <br>&#160&#160while(1) {
+                    <br>&#160&#160for (n=0;n < 36;n++) { <br>&#160&#160&#160&#160P2 = i[n];
+                        <br>&#160&#160&#160&#160//Sample rate control
+                        <br>&#160&#160&#160&#160TH0 = 0xF0;
+                        <br>&#160&#160&#160&#160TL0 = 0x28;
+                        <br>&#160&#160&#160&#160TF0 = 0;
+                        <br>&#160&#160&#160&#160TR0 = 1;
+                        <br>&#160&#160&#160&#160while (TF0 == 0);
+                        <br>&#160&#160&#160&#160TR0 = 0;
+                        <br>&#160&#160&#160&#160}
+                        <br>&#160&#160}
+                        <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

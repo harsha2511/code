@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62
+                    <br>using namespace std;
+                    <br>class complex{
+                    <br>&#160&#160 int real, img;
+                    <br>public:
+                    <br>&#160&#160 complex(int Real, int Img){
+                    <br>&#160&#160 &#160&#160 this->real=Real;
+                    <br>&#160&#160 &#160&#160 this->img=Img;
+                    <br>&#160&#160 }
+                    <br>&#160&#160 void display(){
+                    <br>&#160&#160 &#160&#160 cout &#60&#60 "complex number is: " &#60&#60 real &#160&#160 "+" &#60&#60 img &#60&#60
+                    "i" &#60&#60 endl;
+                    <br>&#160&#160 }
+                    <br>&#160&#160 void operator +(complex &c2){
+                    <br>&#160&#160 &#160&#160 int resreal = this->real+c2.real;
+                    <br>&#160&#160 &#160&#160 int resimg = this->img+c2.img;
+                    <br>&#160&#160 }
+                    <br>&#160&#160 complex c3(resreal,resimg);
+                    <br>&#160&#160 &#160&#160 cout &#60&#60 "The sum of complex numbers is: " &#60&#60 endl;
+                    <br>&#160&#160 &#160&#160 &#160&#160 c3.display();
+                    <br>&#160&#160 }
+                    <br>};
+                    <br>int main(){
+                    <br>&#160&#160 complex c1(2,3), c2(4,5);
+                    <br>&#160&#160 c1.display();
+                    <br>&#160&#160 c2.display();
+                    <br>&#160&#160 c1+c2;
+                    <br>&#160&#160 return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

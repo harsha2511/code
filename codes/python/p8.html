@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    f=open("exp8_input.txt",'w')
+                    <br>line1='S.No Vs(V) Vr(V) Vch(V) I(A)'
+                    <br>f.write(line1)
+                    <br>line2='\n 1 100 86.84 39.0 0.132'
+                    <br>f.write(line2)
+                    <br>line3='\n 2 150 130.6 59.9 0.208'
+                    <br>f.write(line3)
+                    <br>line4='\n 3 200 175.5 79.64 0.283'
+                    <br>f.write(line4)
+                    <br>f.close()
+                    <br>
+                    <br>#step-02
+                    <br>with open("exp8_input.txt",'r')as f:
+                    <br>&#160&#160expdata=f.read()
+                    <br>print(expdata)
+                    <br>f.close()
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

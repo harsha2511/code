@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    n=int(input("Enter the number of capacitor used:"))
+<br>c_row=list()
+<br>v_row=list()
+<br>v_safe_row=list()
+<br>v_safe_col=list()
+<br>for i in range(1,n+1):
+<br>&#160&#160m=int(input("Enter the number of capacitor in breakdown voltage"))
+<br>&#160&#160v_row.clear()
+<br>&#160&#160c_sum=0
+<br>&#160&#160c_p=1
+<br>&#160&#160for j in range(1,m+1):
+<br>&#160&#160&#160&#160c_row.append(int(input("Enter the value of capacitor")))
+<br>&#160&#160&#160&#160v_row.append(int(input("Enter the value of breakdown\voltage")))
+<br>&#160&#160&#160&#160c_sum+=c_row[j-1]
+<br>&#160&#160&#160&#160c_p*=c_row[j-1]
+<br>&#160&#160if m==1:
+<br>&#160&#160&#160&#160v_safe_col.append(v_row[0])
+<br>&#160&#160else:
+<br>&#160&#160&#160&#160for k in range(1,m+1):
+<br>&#160&#160&#160&#160&#160&#160v_safe_row.append(v_row[k-1]*c_sum*c_row[k-1]/c_p)
+<br>&#160&#160&#160&#160&#160&#160v_safe_col.append(min(v_safe_row))
+<br>&#160&#160print("Maximum safe voltage for given capacitor \configuration is",min(v_safe_col),'V')
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

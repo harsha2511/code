@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#reg51.h&#62
+                    <br>sbit Port3_Pin1 = P3^1;
+                    <br>void main(void) {
+                    <br>&#160&#160Port3_Pin1 = 0; //Pin Configuration TMOD = 0x01;
+                    <br>&#160&#160//Square wave generation
+                    <br>&#160&#160while(1) {
+                    <br>&#160&#160&#160&#160Port3_Pin1 = ~Port3_Pin1;
+                    <br>&#160&#160&#160&#160//Delay for 0.5ms (with 1 MHz clock frequency)
+                    <br>&#160&#160&#160&#160TH0 = 0xFF;
+                    <br>&#160&#160&#160&#160TL0 = 0xD5;
+                    <br>&#160&#160&#160&#160TF0 = 0;
+                    <br>&#160&#160&#160&#160TR0 = 1;
+                    <br>&#160&#160&#160&#160while (TF0 == 0);
+                    <br>&#160&#160&#160&#160TR0 = 0;
+                    <br>&#160&#160}
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

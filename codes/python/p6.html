@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    n=int(input('Enter the number of capacitor used: '))
+                    <br>define single():
+                    <br>&#160&#160if n==1:
+                    <br>&#160&#160&#160&#160c=int(input("Enter the value of capacitor in mF"))
+                    <br>&#160&#160&#160&#160v=int(input('Enter the breakdownvoltage'))
+                    <br>&#160&#160&#160&#160vbr=v
+                    <br>&#160&#160&#160&#160print('The maximum safest voltage for given capacitors\in parallel combination is{}'.format(vbr))
+                    <br>single()
+                    <br>def combination():
+                    <br>&#160&#160if n==2:
+                    <br>&#160&#160&#160&#160comb=input('Enter the type of combination as S/s or P/p: ')
+                    <br>&#160&#160&#160&#160c1=int(input("Enter the capacitance of 1st \ capacitor in uF: "))
+                    <br>&#160&#160&#160&#160v1=int(input("Enter the breakdown voltage of\ 1st capacitor in voltes: "))
+                    <br>&#160&#160&#160&#160c2=int(input("Enter the capacitance of 2nd\ capacitor in uF: "))
+                    <br>&#160&#160&#160&#160v2=int(input("Enter the breakdown voltage of \2nd capacitor in voltes: "))
+                    <br>&#160&#160if comb=='s' or comb=='S':
+                    <br>&#160&#160&#160&#160vs1=(v1*(c1+c2)/c2)
+                    <br>&#160&#160&#160&#160vs2=(v2*(c1+c2)/c1)
+                    <br>&#160&#160&#160&#160vsafe1=min(vs1,vs2)
+                    <br>&#160&#160&#160&#160print('The maximum safest voltage for given capacitors\ in series combination is{}'.format(vsafe1))
+                    <br>&#160&#160elif comb=='P' or comb=='p':
+                    <br>&#160&#160&#160&#160v=min(v1,v2)
+                    <br>&#160&#160&#160&#160print('The maximum safest voltage for given capacitors\in parallel combination is{}'.format(v))
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

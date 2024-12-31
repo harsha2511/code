@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    from math import *
+                    <br>import matplotlib.pyplot as plt
+<br>def rl_series_waveform(Vm,R,L,f,t):
+<br>&#160&#160Z=sqrt(R**2+(2*pi*f*L)**2)
+<br>&#160&#160Phi=atan((2*pi*f*L)/R)
+<br>&#160&#160Im=Vm/Z
+<br>&#160&#160voltage_waveform=[Vm*sin(2*pi*f*x) for x in t]
+<br>&#160&#160current_waveform=[Im*sin((2*pi*f*x)-Phi) for x in t]
+<br>&#160&#160power_waveform=[voltage*current for voltage,current in zip(voltage_waveform,current_waveform)]
+<br>&#160&#160return voltage_waveform,current_waveform,power_waveform
+<br>
+<br>Vm=230*sqrt(2)
+<br>R=eval(input("enter the resistance(Ω)"))
+<br>L=eval(input("enter the inductance(H)"))
+<br>f=50
+<br>t=[i*0.0001 for i in range(int(0.02/0.0001))]
+<br>voltage,current,power=rl_series_waveform(Vm,R,L,f,t)
+<br>#subplot(no. of rows,figures in row,location)
+<br>plt.subplot(2,2,1)
+<br>plt.plot(t,voltage,label="voltage",color="b")
+<br>plt.xlabel("Time(s)")
+<br>plt.ylabel("Voltage(V)")
+<br>plt.legend()
+<br>plt.grid()
+<br>
+<br>plt.subplot(2,2,2)
+<br>plt.plot(t,current,label="voltage",color="b")
+<br>plt.xlabel("Time(s)")
+<br>plt.ylabel("Current(A)")
+<br>plt.legend()
+<br>plt.grid()
+<br>
+<br>plt.subplot(2,2,2)
+<br>plt.plot(t,current,label="current",color="b")
+<br>plt.xlabel("Time(s)")
+<br>plt.ylabel("Current(A)")
+<br>plt.legend()
+<br>plt.grid()
+<br>
+<br>plt.subplot(2,2,3)
+<br>plt.plot(t,power,label="power",color="b")
+<br>plt.xlabel("Time(s)")
+<br>plt.ylabel("Power(W)")
+<br>plt.legend()
+<br>plt.grid()
+<br>plt.subplots_adjust(left=0.1,bottom=0.1,right=0.9,top=0.9,wspace=0.4,hspace=0.4)
+<br>plt.show()
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    ANL A, R1
+                    <br>MOV R4, A
+                    <br>MOV A,R2
+                    <br>ANL A,R3
+                    <br>ORL A, R4
+                    <br>MOV DPTR, #1000H ; Load external mem. address
+                    <br>MOVX @DPTR, A
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

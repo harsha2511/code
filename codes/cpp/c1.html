@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    #include &#60stack.h&#62<br>
+                    using namespace std;<br>
+                    void insert(stack&#60int&#62&s,int val){<br>
+                    &#160&#160if(s.empty()){<br>
+                    &#160&#160&#160&#160s.push(val);<br>
+                    &#160&#160&#160&#160return;<br>
+                    &#160&#160}<br>
+                    &#160&#160int temp=s.top();<br>
+                    &#160&#160s.pop();<br>
+                    &#160&#160insert(s,val);<br>
+                    &#160&#160s.push(temp);<br>
+                    }<br>
+                    int main(){<br>
+                    &#160&#160stack&#60int&#62s;<br>
+                    &#160&#160s.push(10);<br>
+                    &#160&#160s.push(20);<br>
+                    &#160&#160s.push(30);<br>
+                    &#160&#160s.push(40);<br>
+                    &#160&#160insert(s,5);<br>
+                    &#160&#160while(!s.empty()){<br>
+                    &#160&#160&#160&#160cout&#60&#60s.top()&#60&#60" ";<br>
+                    &#160&#160&#160&#160s.pop();<br>
+                    &#160&#160}<br>
+                    &#160&#160cout&#60&#60endl;<br>
+                    &#160&#160return 0;<br>
+                    }<br><br>
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

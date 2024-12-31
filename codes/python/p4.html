@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #using equation based method
+                    <br>V=int (input ("Enter the bulb rated/supply voltage: ") ) 
+                    <br>n=int (input ("Enter number of bulbs connected in series: ")) 
+                    <br>power-list () 
+                    <br>resistance=list ()
+                    <br>power_c=list ()
+                    <br>total=0
+                    <br>total_p=0
+                    <br>
+                    <br>for pr in range (1,n+1) :
+                    <br>&#160&#160power.append (int (input (f"Enter the power rating of the Bulb (pr? (W): ") ))
+                    <br>
+                    <br>for p in power:
+                    <br>&#160&#160resistance.append (V**2/p)
+                    <br>
+                    <br>for tr in range (0, len (resistance)) :
+                    <br>&#160&#160total=total+resistance [tr]
+                    <br>current=V/total
+                    <br>
+                    <br>for rc in resistance:
+                    <br>&#160&#160power c.append (current**2*rc)
+                    <br>print (power c)
+                    <br>max_power_c=max (power_c)
+                    <br>max_index=power_c. index (max power_c)
+                    <br>
+                    <br>for pc in range (0, len (power_c)) :
+                    <br>&#160&#160total_p+=power_c[pc]
+                    <br>print ("Total power consumed is (a:5.3F} W ".format (a=total p)) print ("The (W bulb will glow brighter". format (power [max_ index]) )
+                </p>
+            </div>
+        </div><div class="content-container">
+            <div class="code-box">
+                <p>
+                    #using single for loop:|
+                    <br>V=int (input ("Enter the bulb rated/supply voltage: ")) 
+                    <br>n=int (input ("Enter number of bulbs connected in series: ")) 
+                    <br>power=list () #power ratings
+                    <br>prated=list ()
+                    <br>resistance=list ()
+                    <br>power c=list ()
+                    <br>total R=0
+                    <br>total p=0
+                    <br>
+                    <br>for pr in range (1,n+1) :
+                    <br>&#160&#160power= (int (input (f"Enter the power rating of Bulb (pr} (W): ")))
+                    <br>&#160&#160prated. append (power) resistance=V**2/power 
+                    <br>&#160&#160total R+=resistance 
+                    <br>&#160&#160current=V/total R
+                    <br>&#160&#160power c=current**2*total R
+                    <br>print ("Total power consumed is {a:5.2f} W ". format (a=power c))
+                    <br>print ("The fiw bulb will glow brighter". format (min (prated) >)
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #using functions:
+                    <br>total R=0
+                    <br>def power_consumed (v, p) :
+                    <br>&#160&#160resistance=v**2/p 
+                    <br>&#160&#160global total R
+                    <br>&#160&#160total R+=resistance 
+                    <br>&#160&#160current=v/total R
+                    <br>&#160&#160return current**2*total R
+                    <br>def main () :
+                    <br>&#160&#160V=int (input ("Enter the bulb rated/supply voltage: ") ) 
+                    <br>&#160&#160n=int (input ("Enter number of bulbs connected in series: "))
+                    <br>&#160&#160prated=list ()
+                    <br>&#160&#160pc=list ()
+                    <br>&#160&#160for pr in range (1, n+1) :
+                    <br>&#160&#160&#160&#160power=int(input(f"Enter the power rating of Bulb(pr)(W):"))
+                    <br>&#160&#160&#160&#160prated. append (power)
+                    <br>&#160&#160&#160&#160pc=power_ consumed (V, power)
+                    <br>print ("Total power consumed is {a:5.2f) W". format (a=pc) ) 
+                    <br>print ("The (W bulb will glow brighter". format (min (prated) ) )
+                    <br>main ( )
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

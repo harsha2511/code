@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    using namespace std;<br>
+                    <br>class Queue{
+                    <br>private:
+                    <br>int front;
+                    <br>int rear;
+                    <br>int arr[5];
+                    <br>public:
+                    <br>Queue(){
+                    <br>front=-1;
+                    <br>rear=-1;
+                    <br>for(int i=0;i&#60 5;i++){
+                    <br>arr[i]=0;
+                    <br>}
+                    <br>}
+                    <br>bool isempty(){
+                    <br>if(front==-1 && rear==-1) return true;
+                    <br>else return false;
+                    <br>}
+                    <br>bool isFull(){
+                    <br>if(rear==4) return true;//rear value = array size
+                    <br>else return false;
+                    <br>}
+                    <br>void enqueue(int value){
+                    <br>if(isFull()){
+                    <br>cout&#60&#60"Queue is Full"&#60&#60endl;
+                    <br>return;
+                    <br>}
+                    <br>else if(isempty()){
+                    <br>front=0;
+                    <br>rear=0;
+                    <br>arr[rear]=value;
+                    <br>}
+                    <br>else{
+                    <br>rear++;
+                    <br>arr[rear]=value;
+                    <br>}
+                    <br>}
+                    <br>int dequeue(){
+                    <br>int temp;
+                    <br>if(isempty()){
+                    <br>cout&#60&#60"Queue is empty"&#60&#60endl;
+                    <br>return 0;
+                    <br>}
+                    <br>else if(front==rear){
+                    <br>temp=arr[front];
+                    <br>arr[front]=0;
+                    <br>front=rear=-1;
+                    <br>return temp;
+                    <br>}
+                    <br>else{
+                    <br>temp=arr[front];
+                    <br>arr[front]=0;
+                    <br>front++;
+                    <br>return temp;
+                    <br>}
+                    <br>}
+                    <br>int count(){
+                    <br>return(rear-front+1);
+                    <br>}
+                    <br>void display(){
+                    <br>cout&#60&#60"All values in the Queue are: "&#60&#60endl;
+                    <br>for(int i=0;i&#60 5;i++){
+                    <br>cout&#60&#60arr[i]&#60&#60" ";
+                    <br>}
+                    <br>}
+                    <br>};
+                    <br>int main(){
+                    <br>Queue q;
+                    <br>int option, value;
+                    <br>do {
+                    <br>cout&#60&#60"What operation would you like to perform?"&#60&#60endl;
+                    <br>cout&#60&#60"1.Enqueue()"&#60&#60endl;
+                    <br>cout&#60&#60"2.Dequeue()"&#60&#60endl;
+                    <br>cout&#60&#60"3.isEmpty()"&#60&#60endl;
+                    <br>cout&#60&#60"4.isFull()"&#60&#60endl;
+                    <br>cout&#60&#60"5.count()"&#60&#60endl;
+                    <br>cout&#60&#60"6.display()"&#60&#60endl;
+                    <br>cout&#60&#60"7.clear screen"&#60&#60endl;
+                    <br>cout&#60&#60"Enter your choice (enter 0 for exit)"&#60&#60endl;
+                    <br>cin>>option;
+                    <br>switch (option) {
+                    <br>case 0:
+                    <br>cout&#60&#60"Exit"&#60&#60endl;
+                    <br>break;
+                    <br>case 1:
+                    <br>cout&#60&#60"Enqueue Operations"&#60&#60endl;;
+                    <br>cout&#60&#60"Enter the value:";
+                    <br>cin>>value;
+                    <br>q.enqueue(value);
+                    <br>break;
+
+                    <br>case 2:
+                    <br>cout&#60&#60"Dequeued operation\n Dequeued value: "&#60&#60q.dequeue()&#60&#60endl;
+                    <br>break;
+
+                    <br>case 3:
+                    <br>if (q.isempty())
+                    <br>cout&#60&#60"Queue is empty."&#60&#60endl;
+                    <br>else
+                    <br>cout&#60&#60"Queue is not empty"&#60&#60endl;
+                    <br>break;
+
+                    <br>case 4:
+                    <br>if(q.isFull())
+                    <br>cout&#60&#60"Queue is full"&#60&#60endl;
+                    <br>else
+                    <br>cout&#60&#60"Queue is not full"&#60&#60endl;
+                    <br>break;
+
+                    <br>case 5:
+                    <br>cout&#60&#60"Count Operations\n Number of elements in the queue:
+                    "&#60&#60q.count()&#60&#60endl;
+                    <br>break;
+
+                    <br>case 6:
+                    <br>cout&#60&#60"Queue items: ";
+                    <br>q.display();
+                    <br>break;
+
+                    <br>default:
+                    <br>cout&#60&#60"Invalid option! Please try again."&#60&#60endl;
+                    <br>}
+                    <br>}
+                    <br>while (option!=0);
+
+
+                    <br>return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

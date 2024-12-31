@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    using namespace std;
+                    <br>class Person{
+                    <br>public:
+                    <br>&#160&#160virtual void gift(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Gift: Watch or Saree"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>};
+                    <br>class Boy:public Person{
+                    <br>public:
+                    <br>&#160&#160void gift(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Gift: Watch"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>};
+                    <br>class Girl:public Person{
+                    <br>public:
+                    <br>&#160&#160void gift(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"Gift: Saree"&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>};
+                    <br>int main() {
+                    <br>&#160&#160Boy b1;
+                    <br>&#160&#160Girl g1;
+                    <br>&#160&#160Person *ptr=NULL;
+                    <br>&#160&#160ptr=&b1;
+                    <br>&#160&#160ptr->gift();
+                    <br>&#160&#160ptr= &g1;
+                    <br>&#160&#160ptr->gift();
+                    <br>&#160&#160cout&#60&#60"Dynamic memory allocation using keyword new"&#60&#60endl;
+                    <br>&#160&#160ptr=new Boy;//Dynamic memory allocation
+                    <br>&#160&#160ptr->gift();
+                    <br>&#160&#160return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

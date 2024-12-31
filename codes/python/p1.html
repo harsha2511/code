@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    from lcpay import Circuit
+                    <br>ckt=Circuit("""
+                    <br>v 1 0 20;down,color=red
+                    <br>R1 1 2 7;right
+                    <br>R2 2 3 9;right
+                    <br>R3 3 4 11;right=2,i=i(t)
+                    <br>R4 4 0_1 13;down,v=V_{R4}(t)
+                    <br>W 0_1 0;left""")
+                    <br>ckt.draw()
+                    <br>print(ckt.R1.V)
+                    <br>print(ckt.R2.V)
+                    <br>print(ckt.R3.V)
+                    <br>print(ckt.R4.V)
+                    <br>print(ckt.R3.I)
+                </p>
+            </div>
+        </div><div class="content-container">
+            <div class="code-box">
+                <p>
+                    from lcpay import Circuit
+                    <br>ckt=Circuit("""
+                    <br>I 1 0 20;down,color=black
+                    <br>R1 1_1 0_1 7;down,size=1,color=brown
+                    <br>R2 1_2 0_2 9;down,size=1,color=red
+                    <br>R3 1_3 0_3 11;down,size=1,color=orange
+                    <br>R4 1_4 0_4 13;down,size=1,color=gray
+                    <br> W 1 1_1;right
+                    <br>W 1_1 1_2;right
+                    <br>W 1_2 1_3;right
+                    <br>W 1_3 1_4;right
+                    <br>W 0 0_1;right
+                    <br>W 0_1 0_2;right
+                    <br>W 0_2 0_3;right
+                    <br>W 0_3 0_4;right
+                    <br>;draw_nodes=connections,label_ids=false,label_nodes=none""")
+                    <br>ckt.draw()
+                    <br>print(ckt.R1.I)
+                    <br>print(ckt.R2.I)
+                    <br>print(ckt.R3.I)
+                    <br>(ckt.R4.I)q
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

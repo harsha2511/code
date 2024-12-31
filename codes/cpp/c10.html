@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #include &#60iostream&#62<br>
+                    using namespace std;<br>
+                    class sum{
+                    <br>&#160&#160int a;
+                    <br>&#160&#160public:
+                    <br>&#160&#160sum(int b){
+                    <br>&#160&#160&#160&#160this-> a=b;
+                    <br>&#160&#160}
+                    <br>&#160&#160void display(){
+                    <br>&#160&#160&#160&#160cout&#60&#60"The sum of 2 numbers is " &#60&#60a&#60&#60endl;
+                    <br>&#160&#160}
+                    <br>&#160&#160friend sum operator +(sum &s1, sum &s2);
+                    <br>};
+                    <br>sum operator +(sum &s1, sum &s2){
+                    <br>&#160&#160int resum=s1.a+s2.a;
+                    <br>&#160&#160sum c3(resum);
+                    <br>&#160&#160cout &#60&#60 "The sum of number is " &#60&#60 endl;
+                    <br>&#160&#160return c3;
+                    <br>}
+                    <br>int main(){
+                    <br>&#160&#160sum s1(10), s2(23);
+                    <br>&#160&#160s1.display();
+                    <br>&#160&#160s2.display();
+                    <br>&#160&#160sum s3 = s1 + s2;
+                    <br>&#160&#160s3.display();
+                    <br>&#160&#160return 0;
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

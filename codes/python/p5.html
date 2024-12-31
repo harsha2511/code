@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Node Voltage
+                    <br>v=int(input("enter the value of voltage"))
+                    <br>r1=int(input("enter the value of r1"))
+                    <br>r2=int(input("enter the value of r2"))
+                    <br>r3=int(input("enter the value of r3"))
+                    <br>r4=int(input("enter the value of r4"))
+                    <br>from sympy import symbols,Eq,solve
+                    <br>v=symbols("v")
+                    <br>eq1=(v-10)/3+ v/4+ v/11
+                    <br>vn=solve(eq1)
+                    <br>print("the node volgate is={:5.3f}" .format(440/89))
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Branch Current
+                    <br>v=int(input("enter the value of voltage"))
+                    <br>r1=int(input("enter the value of r1"))
+                    <br>r2=int(input("enter the value of r2"))
+                    <br>r3=int(input("enter the value of r3"))
+                    <br>r4=int(input("enter the value of r4"))
+                    <br>from sympy import symbols,Eq,solve
+                    <br>I_1,I_2=symbols('I_1,I_2')
+                    <br>eq1=Eq(10+4*I_1-7*I_2,0)
+                    <br>eq2=Eq(15*I_1-4*I_2,0)
+                    <br>solve((eq1,eq2),(I_1,I_2))
+                    <br>print("branch currents")
+                    <br>print("the current flowing through 3Ω resistor is={:5.3f}A".format(150/89))
+                    <br>print("the current flowing through 5Ω and 6Ω resistor is={:5.3f}A".format(40/89))
+                    <br>print("the current flowing through 4Ω resistor is={:5.3f}A".format((150/89)-(40/89)))
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
