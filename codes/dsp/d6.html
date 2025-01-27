@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Circular Array
+                    <br>clc;clear;
+                    <br>x1=[1 4 3 2];
+                    <br>x2=[1 2 3 1];
+                    <br>N=length(x1);
+                    <br>for n=0:N-1
+                    <br>    y(n+1)=sum(x1.*circshift(flip(x2),n+1));
+                    <br>end
+                    <br>disp(y);
+                    <br>disp(cconv(x1,x2,N));
+                    
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %DFT IDFT Stock Hom's Method
+
+                    <br>clc;clear;
+                    <br>x1=[1 4 3 2];
+                    <br>x2=[1 2 3 1];
+                    <br>X1=fft(x1);
+                    <br>X2=fft(x2);
+                    <br>Y=X1.*X2;
+                    <br>y=ifft(Y);
+                    <br>disp(y);
+                    
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Linear Convolution using Circular Convolution
+                    <br>clc;clear;
+                    <br>x1=[1 2 -1 3 5];
+                    <br>x2=[1 -1];
+                    <br>L=length(x1);
+                    <br>M=length(x2);
+                    <br>N=L+M-1;
+                    <br>x1=[x1 zeros(1,N-L)];
+                    <br>x2=[x2 zeros(1,N-M)];
+                    <br>for n=0:N-1
+                    <br>&#160&#160y(n+1)=sum(x1.*circshift(flip(x2),n+1));
+                    <br>end
+                    <br>disp(y)
+                    <br>disp(conv(x1,x2));
+                    
+                    
+                    
+                    
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Convolution Summation
+                    <br>clc;clear;
+                    <br>x1=[1 2 -1 3 5]; x2=[1 -1];
+                    <br>L=length(x1);
+                    <br>M=length(x2);
+                    <br>N=L+M-1;
+                    <br>for n=1:N
+                    <br>    &#160&#160y(n)=0
+                    <br>    &#160&#160for k=1:L
+                    <br>        &#160&#160&#160&#160if n-k+1>=L && n-k+1 <=M
+                    <br>            &#160&#160&#160&#160&#160&#160y(n)=y(n)+x1(k)*2*(n-k+1);
+                    <br>        &#160&#160&#160&#160end
+                    <br>    &#160&#160end
+                    <br>end
+                    <br>disp(y)
+                    <br>disp(conv(x1,x2));
+                    
+                    
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

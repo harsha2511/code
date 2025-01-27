@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Linear Convolution
+                    <br>#include&#60stdio.h&#62
+                    <br>int x[15],h[15],y[15];
+                    <br>int i,j,m,n;
+                    <br>void main(){
+                    <br> &#160&#160 printf("\n Enter the value of m:");
+                    <br> &#160&#160 scanf("%d",&m);
+                    <br> &#160&#160 printf("\n Enter the value of n:");
+                    <br> &#160&#160 scanf("%d",&n);
+                    <br> &#160&#160 printf("Enter the values for i/p x(n):\n");
+                    <br> &#160&#160 for(i=0;i&#60m;i++)
+                    <br> &#160&#160 scanf("%d",&x[i]);
+                    <br> &#160&#160 printf("Enter the values for i/p h(n):\n");
+                    <br> &#160&#160 for(i=0;i&#60n;i++)
+                    <br> &#160&#160&#160&#160 scanf("%d",&h[i]);
+                    <br> &#160&#160 for(i=m;i&#60m+n-1;i++)
+                    <br> &#160&#160&#160&#160 x[i]=0;
+                    <br> &#160&#160 for(i=n;i&#60m+n-1;i++)
+                    <br> &#160&#160&#160&#160 h[i]=0;
+                    <br> &#160&#160 for(i=0;i&#60m+n-1;i++){
+                    <br> &#160&#160&#160&#160 y[i]=0;
+                    <br> &#160&#160&#160&#160 for(j=0;j&#60=1;j++)
+                    <br> &#160&#160&#160&#160&#160&#160 y[i]=y[i]+(x[j]*h[i-j]);
+                    <br> &#160&#160 }
+                    <br> &#160&#160 for(i=0;i&#60m+n-1;i++)
+                    <br> &#160&#160&#160&#160 printf("\n the value of output y[%d]=%d",i,y[i]);
+                    <br>}
+
+
+
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Circular Convolution
+                    <br>#include&#60stdio.h&#62
+                    <br>int x[30],h[30],y[30],x2[30],a[30];
+                    <br>int i,j,m,n,k;
+                    <br>void main(){
+                    <br> &#160&#160printf("\n Enter the length of the 1st sequence:");
+                    <br> &#160&#160scanf("%d",&m);
+                    <br> &#160&#160printf("\n Enter the length of the 2nd seq:");
+                    <br> &#160&#160scanf("%d",&n);
+                    <br> &#160&#160printf("Enter the 1st sequence:\n");
+                    <br> &#160&#160for(i=0;i&#60m;i++)
+                    <br> &#160&#160&#160&#160scanf("%d",&x[i]);
+                    <br> &#160&#160printf("Enter the 2nd sequence:\n");
+                    <br> &#160&#160for(j=0;j&#60n;j++)
+                    <br> &#160&#160&#160&#160scanf("%d",&h[j]);
+                    <br> &#160&#160y[0]=0;
+                    <br> &#160&#160a[0]=h[0];
+                    <br> &#160&#160for(j=1;j&#60n;j++)
+                    <br> &#160&#160&#160&#160a[j]=h[n-j];
+                    <br> &#160&#160for(i=0;i&#60n;i++)
+                    <br> &#160&#160&#160&#160y[0]+=x[i]*a[i];
+                    <br> &#160&#160for(k=1;k&#60n;k++) {
+                    <br> &#160&#160&#160&#160y[k]=0;
+                    <br> &#160&#160&#160&#160for(j=1;j&#60n;j++)
+                    <br> &#160&#160&#160&#160&#160&#160x2[j]=a[j-1];
+                    <br> &#160&#160&#160&#160x2[0]=a[n-1];
+                    <br> &#160&#160&#160&#160for(i=0;i&#60n;i++){
+                    <br> &#160&#160&#160&#160&#160&#160a[i]=x2[i];
+                    <br> &#160&#160&#160&#160&#160&#160y[k]+=x[i]*x2[i];
+                    <br> &#160&#160&#160&#160}
+                    <br> &#160&#160}
+                    <br> &#160&#160printf("The circular convolution is:\n");
+                    <br> &#160&#160for(i=0;i&#60n;i++)
+                    <br> &#160&#160&#160&#160printf("%d\t",y[i]);
+                    <br> }
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %DFT
+                    <br>#include&#60stdio.h&#62
+                    <br>#include&#60math.h&#62
+                    <br>int N,K,n,i;
+                    <br>float pi=3.1416,sumre=0,sumim=0,out_real[8]={0.0},out_imag[8]={0.0};
+                    <br>int x[32];
+                    <br>void main(void)
+                    <br>{
+                    <br> &#160&#160printf("Enter the length of the sequence:");
+                    <br> &#160&#160scanf("%d",&N);
+                    <br> &#160&#160printf("Enter the sequence:");
+                    <br> &#160&#160for(i=0;i&#60N;i++)
+                    <br> &#160&#160scanf("%d",&x[i]);
+                    <br> &#160&#160for(K=0;K&#60N;K++)
+                    <br> &#160&#160{
+                    <br> &#160&#160&#160&#160sumre=0;
+                    <br> &#160&#160&#160&#160sumim=0;
+                    <br> &#160&#160&#160&#160for(n=0;n&#60N;n++)
+                    <br> &#160&#160&#160&#160{
+                    <br> &#160&#160&#160&#160&#160&#160sumre=sumre+x[n]*cos(2*pi*K*n/N);
+                    <br> &#160&#160&#160&#160&#160&#160sumim=sumim-x[n]*sin(2*pi*K*n/N);
+                    <br> &#160&#160&#160&#160}
+                    <br> &#160&#160&#160&#160out_real[K]=sumre;
+                    <br> &#160&#160&#160&#160out_imag[K]=sumim;
+                    <br> &#160&#160&#160&#160printf("x([%d])=\t %f\t+\t%fi\n",K,out_real[K],out_imag[K]);
+                    <br> &#160&#160}
+                    <br>}
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

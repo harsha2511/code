@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %LOW PASS
+                    <br>clc;clear;close all;
+                    <br>order=10;
+                    <br>Wc=0.5;
+                    <br>N=order+1;
+                    <br>win=ones(N,1);
+                    <br>b=fir1(order,Wc,'low',win);
+                    <br>disp(b);
+                    <br>[H,W]=freqz(b,1);
+                    <br>plot(W/pi,mag2db(abs(H)));
+                    <br>grid on;
+                    <br>title('Low pass filter with cut off frequency 0.5pi and order 12')
+                    <br>xlabel('Normalized frequency (x pi rad)');
+                    <br>ylabel('Magnitude in db');
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %HIGH PASS
+                    <br>clc; clear; close all;
+                    <br>order = 10;
+                    <br>Wc = 0.5;
+                    <br>N=order+1;
+                    <br>win = [0.5;ones(N-2, 1);0.5];
+                    <br>b = fir1(order,Wc,'high',win);
+                    <br>disp(b);
+                    <br>[H,W] = freqz(b,1);
+                    <br>plot(W/pi,mag2db(abs(H)));
+                    <br>grid on;
+                    <br>title('High pass filter with cut off frequency 0.5pi an order 12);
+                    <br>xlabel('Normalize Frequency');
+                    <br>ylabel('Magnitude in db');
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %BAND PASS
+                    <br>clc; clear; close all;
+                    <br>order = 10;
+                    <br>Wc1 = 0.35;
+                    <br>Wc2 = 0.65;
+                    <br>N=order+1;
+                    <br>n = 0:1:N-1;
+                    <br>win = 0.5-0.5*cos(2*pi*n/(N-1));
+                    <br>b = fir1(order,[Wc1 Wc2],'bandpass',win);
+                    <br>disp(b);
+                    <br>[H,W] = freqz(b,1);
+                    <br>plot(W/pi,mag2db(abs(H)));
+                    <br>grid on;
+                    <br>title('High pass filter with cut off frequency 0.35pi, 0.65pi an order 12');
+                    <br>xlabel('Normalize Frequency');
+                    <br>ylabel('Magnitude in db');
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %BAND STOP
+                    <br>clc; clear; close all;
+                    <br>order = 10;
+                    <br>Wc1 = 0.35;
+                    <br>Wc2 = 0.65;
+                    <br>N=order+1;
+                    <br>n = 0:1:N-1;
+                    <br>win = 0.5-0.5*cos(2*pi*n/(N-1));
+                    <br>b = fir1(order,[Wc1 Wc2],'stop',win);
+                    <br>disp(b);
+                    <br>[H,W] = freqz(b,1);
+                    <br>plot(W/pi,mag2db(abs(H)));
+                    <br>grid on;
+                    <br>title('Band stop filter with cut off frequency 0.35pi, 0.65pi an order 12');
+                    <br>xlabel('Normalize Frequency');
+                    <br>ylabel('Magnitude in db');
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

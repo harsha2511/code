@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Eliminate noise from audio signals
+                    <br>[x,fs]=audioread('Noisyspeech-16-22p5-mono-5secs.wav');
+                    <br>subplot(3,2,1);plot(x);
+                    <br>title('Original Audio');
+                    <br>N=length(x);
+                    <br>X=fft(x);
+                    <br>xmag=abs(X);
+                    <br>xmagh=xmag(1:N/2);
+                    <br>f=(1:N/2)*fs/N;
+                    <br>subplot(3,2,2);plot(f,xmagh);
+                    <br>title('Frequency Spectrum');
+                    <br>y=x+randu(N,1)/10;
+                    <br>subplot(3,2,3);plot(y);
+                    <br>title('Audio Signal with Noise');
+                    <br>xlabel('Time');ylabel('Amplitude');
+                    <br>Y=dfft(y);
+                    <br>ymag=abs(Y);
+                    <br>ymagh=ymag(1:N/2);
+                    <br>f=(1:N/2)*fs/N;
+                    <br>subplot(3,2,4);plot(f,ymagh);
+                    <br>title('Frequency Spectrum of audio Signal with Noise');
+                    <br>xlabel('Frequency');ylabel('Magnitude');
+                    <br>n=7;fc=2000/fs;
+                    <br>[b,a]=butter(n,fc,'low');
+                    <br>z=filter(b,a,y);
+                    <br>subplot(3,2,5);plot(z);
+                    <br>title('Audio Signal after filtering');
+                    <br>Z=fft(z);
+                    <br>zmag=abs(Z);
+                    <br>zmagh=zmag(1:N/2);
+                    <br>f=(1:N/2)*fs/N;
+                    <br>subplot(3,2,6);plot(f,zmagh);
+                    <br>title('Frequency Spectrum of audio Signal after filtering');
+                    <br>xlabel('Time');ylabel('Amplitude');
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Eliminate salt & pepper noise from image signals
+                    <br>clc;clear;close all;
+                    <br>I=imread('coins.img');
+                    <br>subplot(2,2,1);imshow(I);
+                    <br>title('Original Image');
+                    <br>In=imnoise(I,'salt & pepper',0.02)
+                    <br>subplot(2,2,1);imshow(In);
+                    <br>title('Image with Salt & Pepper Noise');
+                    <br>Iav=filter2(fspecial('average',3),In)/255;
+                    <br>subplot(2,2,3);imshow(Iav);
+                    <br>title('Image with Average Filter');
+                    <br>Im=medfilt2(Iav);
+                    <br>subplot(2,2,4);imshow(Im);
+                    <br>title('Image with Medium Filter');
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

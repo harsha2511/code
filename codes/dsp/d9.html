@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %LOW PASS BUTTERWORTH FILTER
+                    <br>clc;clear;
+                    <br>wp=0.25*pi;
+                    <br>ws=0.55*pi;
+                    <br>ap=0.5;
+                    <br>as=15;
+                    <br>T=1;
+                    <br>op=(2/T)*tan(wp/2);
+                    <br>os=(2/T)*tan(ws/2);
+                    <br>[N,oc]=buttord(op,os,ap,as,'s');
+                    <br>disp(N);
+                    <br>oc=op/(10^(0.1*ap)-1)^(1/(2*N));
+                    <br>disp(oc);
+                    <br>[b,a]=butter(N,oc,'s');
+                    <br>tf(b,a)
+                    <br>%convert H(s) to H(z)--> use bilinear transform
+                    <br>[bz,az]=bilinear(b,a,1/T);
+                    <br>tf(bz,az,-1,'variable','z^-1')
+                    <br>[H W]=freqz(bz,az);
+                    <br>plot(W/pi,mag2db(abs(H)));%convert magnitude to decimal
+                    <br>ylim([-30 5]);
+                    <br>grid on;
+                    <br>title('Low Pass Butterworth Filter');
+                    <br>xlabel('Normalized Frequency (xpi rad/sample)');
+                    <br>ylabel('Gain (dB)');
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %%LOW PASS CHEBYSHEV FILTER
+                    <br>clc;clear;
+                    <br>wp=0.25*pi;
+                    <br>ws=0.55*pi;
+                    <br>ap=1;
+                    <br>as=15;
+                    <br>T=1;
+                    <br>op=(2/T)*tan(wp/2);
+                    <br>os=(2/T)*tan(ws/2);
+                    <br>[N,oc]=cheb1ord(op,os,ap,as,'s');
+                    <br>disp(N);
+                    <br>oc=op/(10^(0.1*ap)-1)^(1/(2*N));
+                    <br>disp(oc);
+                    <br>[b,a]=cheby1(N,ap,op,'s');
+                    <br>tf(b,a)
+                    <br>[bz,az]=bilinear(b,a,1/T);
+                    <br>tf(bz,az,-1,'variable','z^-1')
+                    <br>[H W]=freqz(bz,az);
+                    <br>plot(W/pi,mag2db(abs(H)));
+                    <br>ylim([-30 5]);
+                    <br>grid on;
+                    <br>title('Chebysev Filter');
+                    <br>xlabel('Normalized Frequency (xpi rad/sample)');
+                    <br>ylabel('Gain (dB)');
+                </p>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

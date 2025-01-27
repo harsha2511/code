@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %For recorded audio signal
+                    <br>clc;clear;close all;
+                    <br>f=22050;
+                    <br>x=audiorecorder(f,16,1);
+                    <br>disp('start');
+                    <br>recordblocking(x,5);
+                    <br>disp('stop');
+                    <br>xr=getaudiodata(x);
+                    <br>sound(xr,fs);
+                    <br>subplot(2,1,1);
+                    <br>plot(xr);
+                    <br>title('Original audio Signal');
+                    <br>xlabel('Time');
+                    <br>ylabel('Frequency(Hz)');
+                    <br>y=fft(xr);
+                    <br>n=length(xr);
+                    <br>ymag=abs(y);
+                    <br>ymagh=ymag(1:n/2);
+                    <br>f=(1:n/2)*fs/n;
+                    <br>subplot(2,1,2);
+                    <br>plot(f,ymagh);
+                    <br>title('Frequency Spectrum');
+                    <br>xlabel('Time');
+                    <br>ylabel('Frequency(Hz)');                   
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %For external audio signal
+                    <br>[x,fs]=audioread('Sampleaudio.mp3');
+                    <br>xr=x(:,1);
+                    <br>subplot(2,1,1);
+                    <br>plot(xr);
+                    <br>title('Original audio Signal');
+                    <br>xlabel('Time');
+                    <br>ylabel('Frequency(Hz)');
+                    <br>y=fft(xr);
+                    <br>n=length(xr);
+                    <br>ymag=abs(y);
+                    <br>ymagh=ymag(1:n/2);
+                    <br>f=(1:n/2)*fs/n;
+                    <br>subplot(2,1,2);
+                    <br>plot(f,ymagh);
+                    <br>title('Frequency Spectrum');
+                    <br>xlabel('Time');
+                    <br>ylabel('Frequency(Hz)');                    
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

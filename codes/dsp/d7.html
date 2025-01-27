@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    clc;clear;close all;
+                    <br>fs=5000;
+                    <br>T=0.4;
+                    <br>t=0:1/fs:T;
+                    <br>fRow=[697 770 852 941];
+                    <br>fCol=[1209 1336 1477];
+                    <br>dialedNum=8023600822;
+                    <br>dialedNum=num2str(dialedNum);
+                    <br>toneSig=[];
+                    <br>for i=1:length(dialedNum)
+                    <br> &#160&#160switch dialedNum(i)
+                    <br> &#160&#160&#160&#160case '1'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(1);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(1);
+                    <br> &#160&#160&#160&#160case '2'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(1);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(2);
+                    <br> &#160&#160&#160&#160case '3'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(1);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(3);
+                    <br> &#160&#160&#160&#160case '4'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(2);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(1);
+                    <br> &#160&#160&#160&#160case'5'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(2);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(2);
+                    <br> &#160&#160&#160&#160case'6'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(2);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(3);
+                    <br> &#160&#160&#160&#160case'7'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(3);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(1);
+                    <br> &#160&#160&#160&#160case'8'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(3);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(2);
+                    <br> &#160&#160&#160&#160case'9'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(3);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(3);
+                    <br> &#160&#160&#160&#160case'0'
+                    <br> &#160&#160&#160&#160&#160&#160f1=fRow(4);
+                    <br> &#160&#160&#160&#160&#160&#160f2=fCol(2);
+                    <br> &#160&#160end
+                    <br> &#160&#160tone=(sin(2*pi*f1*t)+sin(2*pi*f2*t))';
+                    <br> &#160&#160toneSig=[toneSig;tone;zeros(size(tone))];
+                    <br>end
+                    <br>sound(toneSig,fs)
+                    <br>subplot(2,1,1); plot(toneSig)
+                    <br>title('DTMF Signal');
+                    <br>xlim([0,40000]);
+                    <br>audiowrite('DTMSignal.wav',toneSig,fs);
+                    <br>N=length(toneSig);
+                    <br>X=abs(fft(toneSig))/N;
+                    <br>X=2*X(1:N/2+1);
+                    <br>f=(0:N/2)*fs/N;
+                    <br>subplot(2,1,2); plot(f,X)
+                    <br>title('Frequency spectrum of DTMF signal');
+
+
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

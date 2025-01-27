@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Original, Resized, Grey-Scaled and black &  white image
+                    <br>clc;clear;close all;
+                    <br>im=imread('peppers.png');
+                    <br>subplot(2,2,1);imshow(im);
+                    <br>title('Original Image');
+                    <br>imr=imresize(im,0.3);
+                    <br>subplot(2,2,2);imshow(imr);
+                    <br>title('Resize Image');
+                    <br>img=rgb2gray(im);
+                    <br>subplot(2,2,3);imshow(img);
+                    <br>title('GreyScale Image');
+                    <br>imb=imbinarize(img);
+                    <br>subplot(2,2,4);imshow(imb);
+                    <br>title('Black and White Image');
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Original, Grey-Scaled, Horizontal edge and Vertical edge image
+                    <br>clc;clear;close all;
+                    <br>im=imread('peppers.png');
+                    <br>subplot(2,2,1);imshow(im);
+                    <br>title('Original Image');
+                    <br>img=rgb2gray(im);
+                    <br>subplot(2,2,2);imshow(img);
+                    <br>title('GreyScale Image');
+                    <br>H=[1 1 1;0 0 0;-1 -1 -1];
+                    <br>V=[1,0,-1;1 0 -1;1 0 -1];
+                    <br>imh=conv2(img,H);
+                    <br>subplot(2,2,3);imshow(imh);
+                    <br>title('Horizontal edges');
+                    <br>imv=conv2(img,V);
+                    <br>subplot(2,2,4);imshow(imv);
+                    <br>title('Verticle edges');
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

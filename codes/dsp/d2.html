@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Magnitude and Phase Spectrum
+                    <br>clc;clear;close all;
+                    <br>x=[1 1 1 1 1 1 0 0];
+                    <br>N=length(x);
+                    <br>y=zeros(1,N);
+                    <br>for k=0:N-1
+                    <br>&#160&#160y(x+1)=0;
+                    <br>&#160&#160for n=0:N-1
+                    <br>&#160&#160&#160&#160y(k+1)=y(k+1)+x(n+1)*exp(-1i*2*pi*n*k/N);
+                    <br>&#160&#160end
+                    <br>end
+                    <br>disp(y);
+                    <br>ymag=abs(y);
+                    <br>yph=phase(y);
+                    <br>n=0:N-1;
+                    <br>subplot(2,1,1)
+                    <br>stem(n,ymag);
+                    <br>title('Magnitude of X(k)');
+                    <br>xlabel('n');
+                    <br>ylabel('Magnitude');
+                    <br>subplot(2,1,2);
+                    <br>stem(n,yph);
+                    <br>title('Phase of X(k)');
+                    <br>xlabel('n');
+                    <br>ylabel('Phase');
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    %Frequency domain analysis for sinusoidal signals 
+                    <br>clc;clear;close all;
+                    <br>f1=100;f2=250;f3=350;
+                    <br>l=1500;fs=1500;
+                    <br>t=(0:l-1)*1/fs;
+                    <br>x=sin(2*pi*f1*t)+sin(2*pi*f2*t)+sin(2*pi*f3*t);
+                    <br>plot(t,x);
+                    <br>title('Frequency Domain Signal');
+                    <br>xlabel('Frequency');
+                    <br>xlim([0,0.1]);
+                    <br>y=fft(x);
+                    <br>ymag=abs(y);
+                    <br>ymagh=ymag(1:l/2);
+                    <br>f=(1:l/2)*fs/l;
+                    <br>figure;
+                    <br>plot(f,ymagh);
+                    <br>title('Frequency Domain Signal');
+                    <br>xlabel('Frequency');
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
