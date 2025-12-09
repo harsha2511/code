@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Reversing and Merging Linked Lists<br>
+                    #Time Complexity: Merge two lists O(m + n)<br>
+                    #Space Complexity: O(1) extra (besides output list nodes)<br>
+                    class Node:<br>
+                    &#160&#160def __init__(self, data):<br>
+                    &#160&#160&#160&#160self.data = data<br>
+                    &#160&#160&#160&#160self.next = None<br><br>
+
+
+                    class LinkedList:<br>
+                    &#160&#160def __init__(self, head=None):<br>
+                    &#160&#160&#160&#160self.head = head<br><br>
+
+                    &#160&#160def append(self, data):<br>
+                    &#160&#160&#160&#160new_node = Node(data)<br>
+                    &#160&#160&#160&#160if self.head is None:<br>
+                    &#160&#160&#160&#160&#160&#160self.head = new_node<br>
+                    &#160&#160&#160&#160 else:<br>
+                    &#160&#160&#160&#160&#160&#160current = self.head<br>
+                    &#160&#160&#160&#160&#160&#160while current.next is not None:<br>
+                    &#160&#160&#160&#160&#160&#160&#160&#160current = current.next<br>
+                    &#160&#160&#160&#160&#160&#160current.next = new_node<br><br>
+
+                    &#160&#160def display(self):<br>
+                    &#160&#160&#160&#160current = self.head<br>
+                    &#160&#160&#160&#160while current is not None:<br>
+                    &#160&#160&#160&#160&#160&#160print(current.data, end=" -> ")<br>
+                    &#160&#160&#160&#160&#160&#160current = current.next<br>
+                    &#160&#160&#160&#160print("None")<br><br>
+
+
+
+
+                    &#160&#160def merge_sorted_lists(L1, L2):<br>
+                    &#160&#160&#160&#160p1 = L1.head<br>
+                    &#160&#160&#160&#160p2 = L2.head<br>
+
+                    &#160&#160&#160&#160merged = LinkedList()<br>
+                    &#160&#160&#160&#160tail = None<br>
+
+                    &#160&#160&#160&#160while p1 is not None and p2 is not None:<br>
+                    &#160&#160&#160&#160&#160&#160if p1.data < p2.data:<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160new_node = Node(p1.data)<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160p1 = p1.next<br>
+                        &#160&#160&#160&#160&#160&#160else:<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160new_node = Node(p2.data)<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160p2 = p2.next<br>
+                        &#160&#160&#160&#160&#160&#160if merged.head is None:<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160merged.head = new_node<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160tail = new_node<br>
+                        &#160&#160&#160&#160&#160&#160else:<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160tail.next = new_node<br>
+                        &#160&#160&#160&#160&#160&#160&#160&#160tail = new_node<br><br>
+
+                        &#160&#160&#160&#160# Add remaining nodes<br>
+                        &#160&#160&#160&#160while p1 is not None:<br>
+                        &#160&#160&#160&#160&#160&#160tail.next = Node(p1.data)<br>
+                        &#160&#160&#160&#160&#160&#160tail = tail.next<br>
+                        &#160&#160&#160&#160&#160&#160p1 = p1.next<br>
+
+                        &#160&#160&#160&#160while p2 is not None:<br>
+                        &#160&#160&#160&#160&#160&#160tail.next = Node(p2.data)<br>
+                        &#160&#160&#160&#160&#160&#160tail = tail.next<br>
+                        &#160&#160&#160&#160&#160&#160p2 = p2.next<br>
+
+                        &#160&#160&#160&#160return merged<br><br>
+
+                        L1 = LinkedList()<br>
+                        L1.append(1)<br>
+                        L1.append(5)<br>
+                        L1.append(7)<br>
+
+                        L2 = LinkedList()<br>
+                        L2.append(2)<br>
+                        L2.append(3)<br>
+                        L2.append(6)<br>
+
+                        print("List 1:")<br>
+                        L1.display()<br>
+                        print("List 2:")<br>
+                        L2.display()<br>
+
+                        L3 = merge_sorted_lists(L1, L2)<br>
+                        print("Merged List:")<br>
+                        L3.display()<br>
+
+
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

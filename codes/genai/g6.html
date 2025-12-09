@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Stack Implementation<br>
+                    class Stack:<br>
+                    &#160&#160def __init__(self):<br>
+                    &#160&#160&#160&#160self.data = []<br>
+
+                    &#160&#160def __len__(self):<br>
+                    &#160&#160&#160&#160return len(self.data)<br>
+
+                    &#160&#160def is_empty(self):<br>
+                    &#160&#160&#160&#160return len(self.data) == 0<br>
+
+                    &#160&#160def push(self, val):<br>
+                    &#160&#160&#160&#160self.data.append(val)<br>
+
+                    &#160&#160def top(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Stack is empty")<br>
+                    &#160&#160&#160&#160 else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data[-1]<br>
+
+                    &#160&#160def pop(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Stack is empty")<br>
+                    &#160&#160&#160&#160else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data.pop()<br>
+
+                    &#160&#160def display(self):<br>
+                    &#160&#160&#160&#160print(self.data)<br><br>
+
+
+                    S = Stack()<br>
+                    print(S.is_empty())<br>
+                    S.push(5)<br>
+                    S.display()<br>
+                    S.push(3)<br>
+                    S.display()<br>
+                    S.push(6)<br>
+                    S.display()<br>
+                    print(S.is_empty())<br>
+                    print(len(S))<br>
+                    print(S.top())<br>
+                    S.pop()<br>
+                    S.display()<br>
+                    print(S.top())<br>
+                    S.pop()<br>
+                    S.display()
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Queue Implementation<br>
+                    class Queue:<br>
+                    &#160&#160def __init__(self):<br>
+                    &#160&#160&#160&#160self.data = []<br>
+
+                    &#160&#160def __len__(self):<br>
+                    &#160&#160&#160&#160return len(self.data)<br>
+
+                    &#160&#160def is_empty(self):<br>
+                    &#160&#160&#160&#160return len(self.data) == 0<br>
+
+                    &#160&#160def enqueue(self, val):<br>
+                    &#160&#160&#160&#160self.data.append(val)<br>
+
+                    &#160&#160def first(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Queue is empty")<br>
+                    &#160&#160&#160&#160else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data[0]<br>
+
+                    &#160&#160def dequeue(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Queue is empty")<br>
+                    &#160&#160&#160&#160else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data.pop(0)<br>
+
+                    &#160&#160def display(self):<br>
+                    &#160&#160&#160&#160print(self.data)<br>
+
+
+                    Q = Queue()<br>
+                    print(Q.is_empty())<br>
+                    Q.enqueue(5)<br>
+                    Q.display()<br>
+                    Q.enqueue(3)<br>
+                    Q.display()<br>
+                    Q.enqueue(6)<br>
+                    Q.display()<br>
+                    print(Q.is_empty())<br>
+                    print(len(Q))<br>
+                    print(Q.first())<br>
+                    Q.dequeue()<br>
+                    Q.display()<br>
+                    print(Q.first())<br>
+                    Q.dequeue()<br>
+                    Q.display()
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Stack Using Two Queues<br>
+                    class Queue:<br>
+                    &#160&#160def __init__(self):<br>
+                    &#160&#160&#160&#160self.data = []<br>
+
+                    &#160&#160def __len__(self):<br>
+                    &#160&#160&#160&#160return len(self.data)<br>
+
+                    &#160&#160def is_empty(self):<br>
+                    &#160&#160&#160&#160return len(self.data) == 0<br>
+
+                    &#160&#160def enqueue(self, val):<br>
+                    &#160&#160&#160&#160self.data.append(val)<br>
+
+                    &#160&#160def first(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Queue is empty")<br>
+                    &#160&#160&#160&#160else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data[0]<br>
+
+                    &#160&#160def dequeue(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Queue is empty")<br>
+                    &#160&#160&#160&#160else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data.pop(0)<br>
+
+                    &#160&#160def display(self):<br>
+                    &#160&#160&#160&#160print(self.data)<br><br>
+
+
+                    class StackUsingQueues:<br>
+                    &#160&#160def __init__(self):<br>
+                    &#160&#160&#160&#160self.Q1 = Queue()<br>
+                    &#160&#160&#160&#160self.Q2 = Queue()<br><br>
+
+                    &#160&#160def __len__(self):<br>
+                    &#160&#160&#160&#160return len(self.Q1)<br><br>
+
+                    &#160&#160def is_empty(self):<br>
+                    &#160&#160&#160&#160return self.Q1.is_empty()<br><br>
+
+                    &#160&#160def push(self, val):<br>
+                    &#160&#160&#160&#160self.Q2.enqueue(val)<br>
+                    &#160&#160&#160&#160while not self.Q1.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160self.Q2.enqueue(self.Q1.dequeue())<br>
+                    &#160&#160&#160&#160self.Q1, self.Q2 = self.Q2, self.Q1<br>
+
+                    &#160&#160def pop(self):<br>
+                    &#160&#160&#160&#160return self.Q1.dequeue()<br>
+
+                    &#160&#160def top(self):<br>
+                    &#160&#160&#160&#160return self.Q1.first()<br>
+
+                    &#160&#160def display(self):<br>
+                    &#160&#160&#160&#160self.Q1.display()<br>
+
+
+                    S = StackUsingQueues()<br>
+                    print(S.is_empty())<br>
+                    S.push(5)<br>
+                    S.display()<br>
+                    S.push(3)<br>
+                    S.display()<br>
+                    S.push(6)<br>
+                    S.display()<br>
+                    print(S.is_empty())<br>
+                    print(len(S))<br>
+                    print(S.top())<br>
+                    S.pop()<br>
+                    S.display()<br>
+                    print(S.top())<br>
+                    S.pop()<br>
+                    S.display()
+
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Balanced Parenthesis Using Stack<br>
+                    class Stack:<br>
+                    &#160&#160def __init__(self):<br>
+                    &#160&#160&#160&#160self.data = []<br>
+
+                    &#160&#160def is_empty(self):<br>
+                    &#160&#160&#160&#160return len(self.data) == 0<br>
+
+                    &#160&#160def push(self, val):<br>
+                    &#160&#160&#160&#160self.data.append(val)<br>
+
+                    &#160&#160def pop(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160print("Stack is empty")<br>
+                    &#160&#160&#160&#160else:<br>
+                    &#160&#160&#160&#160&#160&#160return self.data.pop()<br>
+
+
+                    expr = "{(5+x)-[y+z]}"<br>
+                    left = "([{"<br>
+                    right = ")]}"<br>
+
+                    S = Stack()<br>
+                    f = 1<br>
+
+                    for c in expr:<br>
+                    &#160&#160if c in left:<br>
+                    &#160&#160&#160&#160S.push(c)<br>
+                    &#160&#160elif c in right:<br>
+                    &#160&#160&#160&#160if S.is_empty() or right.index(c) != left.index(S.pop()):<br>
+                    &#160&#160&#160&#160&#160&#160f = 0<br>
+                    &#160&#160&#160&#160&#160&#160break<br>
+
+                    if f == 1 and S.is_empty():<br>
+                    &#160&#160print("Balanced Parenthesis")<br>
+                    else:<br>
+                    &#160&#160print("Unbalanced Parenthesis")<br>
+
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

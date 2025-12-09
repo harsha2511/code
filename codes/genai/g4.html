@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    class PriorityQueue:<br>
+                    &#160&#160def __init__(self):<br>
+                    &#160&#160&#160&#160self.queue = []<br><br>
+
+                    &#160&#160def is_empty(self):<br>
+                    &#160&#160&#160&#160return len(self.queue) == 0<br><br>
+
+                    &#160&#160def push(self, task, priority):<br>
+                    &#160&#160&#160&#160self.queue.append((task, priority))<br>
+                    &#160&#160&#160&#160# Smallest priority number removed first<br>
+                    &#160&#160&#160&#160self.queue.sort(key=lambda x: x[1])<br><br>
+
+                    &#160&#160def pop(self):<br>
+                    &#160&#160&#160&#160if self.is_empty():<br>
+                    &#160&#160&#160&#160&#160&#160raise IndexError("Priority Queue is empty")<br>
+                    &#160&#160&#160&#160return self.queue.pop(0)<br><br>
+                    pq = PriorityQueue()<br>
+
+                    pq.push("A", 3)<br>
+                    pq.push("B", 2)<br>
+                    pq.push("C", 3)<br>
+                    pq.push("D", 1)<br>
+
+                    task, priority = pq.pop()<br>
+                    print(task, priority)<br>
+
+
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

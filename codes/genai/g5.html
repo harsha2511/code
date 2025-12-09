@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Reversing and Merging Linked Lists<br>
+                    # Time Complexity: O(n) — each node is processed once<br>
+                    # Space Complexity: O(1) — in-place, no extra memory<br>
+                    class Node:<br>
+                    &#160&#160def __init__(self, data):<br>
+                    &#160&#160&#160&#160self.data = data<br>
+                    &#160&#160&#160&#160self.next = None<br><br>
+
+
+                    class LinkedList:<br>
+                    &#160&#160def __init__(self, head=None):<br>
+                    &#160&#160&#160&#160self.head = head<br><br>
+
+                    &#160&#160def append(self, data):<br>
+                    &#160&#160&#160&#160new_node = Node(data)<br>
+                    &#160&#160&#160&#160if self.head is None:<br>
+                    &#160&#160&#160&#160&#160&#160self.head = new_node<br>
+                    &#160&#160&#160&#160 else:<br>
+                    &#160&#160&#160&#160&#160&#160current = self.head<br>
+                    &#160&#160&#160&#160&#160&#160while current.next is not None:<br>
+                    &#160&#160&#160&#160&#160&#160&#160&#160current = current.next<br>
+                    &#160&#160&#160&#160&#160&#160current.next = new_node<br><br>
+
+                    &#160&#160def display(self):<br>
+                    &#160&#160&#160&#160current = self.head<br>
+                    &#160&#160&#160&#160while current is not None:<br>
+                    &#160&#160&#160&#160&#160&#160print(current.data, end=" -> ")<br>
+                    &#160&#160&#160&#160&#160&#160current = current.next<br>
+                    &#160&#160&#160&#160print("None")<br><br>
+                    &#160&#160def reverse(head):<br>
+                    &#160&#160&#160&#160previous = None<br>
+                    &#160&#160&#160&#160current = head<br>
+
+                    &#160&#160&#160&#160while current is not None:<br>
+                    &#160&#160&#160&#160&#160&#160&#160&#160next_node = current.next<br>
+                    &#160&#160&#160&#160&#160&#160&#160&#160current.next = previous<br>
+                    &#160&#160&#160&#160&#160&#160&#160&#160previous = current<br>
+                    &#160&#160&#160&#160&#160&#160&#160&#160current = next_node<br>
+
+                    &#160&#160&#160&#160return previous<br><br>
+    L = LinkedList()<br>
+    L.append(5)<br>
+    L.append(8)<br>
+    L.append(7)<br>
+    L.append(6)<br>
+    
+    print("Original List:")<br>
+    L.display()<br>
+    
+    L.head = reverse(L.head)<br>
+    
+    print("Reversed List:")<br>
+    L.display()<br>
+    
+
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Iterative Method<br>
+                    # Time Complexity: O(n) Space Complexity: O(1)<br>
+                    def fib_iterative(n):<br>
+                    &#160&#160a = 0<br>
+                    &#160&#160b = 1<br>
+
+                    &#160&#160if n <= 1:<br>
+                        &#160&#160&#160&#160return n<br>
+
+                        &#160&#160for i in range(2, n+1):<br>
+                        &#160&#160&#160&#160c = a + b<br>
+                        &#160&#160&#160&#160a = b<br>
+                        &#160&#160&#160&#160b = c<br>
+
+                        &#160&#160return b<br><br>
+                        # Print series<br>
+                        def fib_series_iter(n):<br>
+                        &#160&#160a = 0<br>
+                        &#160&#160b = 1<br>
+                        &#160&#160print(a, b, end=" ")<br>
+
+                        &#160&#160for i in range(2, n):<br>
+                        &#160&#160&#160&#160c = a + b<br>
+                        &#160&#160&#160&#160print(c, end=" ")<br>
+                        &#160&#160&#160&#160a = b<br>
+                        &#160&#160&#160&#160b = c<br>
+                        fib_series_iter(10)
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Recursive Method<br>
+                    #Time Complexity: O(2ⁿ) Space Complexity: O(n)<br>
+                    def fib_recursive(n):<br>
+                    &#160&#160if n <= 1:<br>
+                        &#160&#160&#160&#160return n<br>
+                        &#160&#160return fib_recursive(n-1) + fib_recursive(n-2)<br><br>
+                        # Print series<br>
+                        def fib_series_recursive(n):<br>
+                        &#160&#160for i in range(n):<br>
+                        &#160&#160&#160&#160print(fib_recursive(i), end=" ")<br>
+                        fib_series_recursive(10)<br>
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    #Recursion with Memoization<br>
+                    # Time Complexity: O(n) Space Complexity: O(n)<br>
+                    def fib_memo(n, memo={}):<br>
+                    &#160&#160if n in memo:<br>
+                    &#160&#160&#160&#160return memo[n]<br>
+                    &#160&#160if n <= 1:<br>
+                        &#160&#160&#160&#160memo[n] = n<br>
+                        &#160&#160else:<br>
+                        &#160&#160&#160&#160memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)<br>
+                        &#160&#160return memo[n]<br><br>
+                        # Print series<br>
+                        def fib_series_memo(n):<br>
+                        &#160&#160for i in range(n):<br>
+                        &#160&#160&#160&#160print(fib_memo(i), end=" ")<br>
+                        fib_series_memo(10)<br>
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

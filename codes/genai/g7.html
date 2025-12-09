@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes</title>
+    <link rel="stylesheet" href="../../styles/code.css">
+    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    # Using Loops (Iterative Method)<br>
+                    #Time Complexity: O(n) Space Complexity: O(1)<br>
+                    arr = [1, 2, 3, 4, 5]<br>
+                    total = 0<br>
+                    for num in arr:<br>
+                    &#160&#160total += num<br>
+                    print("Sum of array elements =", total)<br>
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    # Recursive Method<br>
+                    # Time Complexity: O(n) — each element is processed<br>
+                    # Space Complexity: O(n) — recursive call stack stores at most n calls<br>
+                    def sum_recursive(arr, n):<br>
+                    &#160&#160if n == 0:<br>
+                    &#160&#160&#160&#160return 0<br>
+                    &#160&#160return arr[n-1] + sum_recursive(arr, n-1)<br>
+                    arr = [1, 2, 3, 4, 5]<br>
+                    print("Sum (recursive) =", sum_recursive(arr, len(arr)))<br>
+                </p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="code-box">
+                <p>
+                    # Recursive Divide and Conquer Sum<br>
+                    #Time Complexity: O(n)<br>
+                    #Space Complexity: O(log n) — height of recursion tree<br>
+                    def sum_divide_conquer(arr, left, right):<br>
+                    &#160&#160if left == right:<br>
+                    &#160&#160&#160&#160return arr[left]<br>
+
+                    &#160&#160mid = (left + right) // 2<br>
+
+                    &#160&#160left_sum = sum_divide_conquer(arr, left, mid)<br>
+                    &#160&#160right_sum = sum_divide_conquer(arr, mid + 1, right)<br>
+
+                    &#160&#160return left_sum + right_sum<br>
+
+
+                    arr = [1, 2, 3, 4, 5]<br>
+                    print("Sum (divide & conquer) =", sum_divide_conquer(arr, 0, len(arr) - 1)))<br>
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
